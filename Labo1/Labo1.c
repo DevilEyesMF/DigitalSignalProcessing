@@ -51,7 +51,7 @@ int main()
 
 	for (int i = 0; i < NUMBER_OF_SAMPLES; i++)
 	{
-		printf("point %d:\n\twave 1: %lf\t\twave 2: %lf\t\tsum: %lf\n", i, x1[i], x2[i], sum[i]);
+		printf("point %d:\twave 1: %lf\t\twave 2: %lf\t\tsum: %lf\n", i, x1[i], x2[i], sum[i]);
 	}
 
 	return 0;
@@ -71,5 +71,10 @@ void generate_sinewave(double a, double f, double fs, double p, int n, double* x
 // add_waves
 void add_waves(double* x1, double* x2, int n, double* sum)
 {
+	for (int i = 0; i < n; i++)
+	{
+		sum[i] = x1[i] + x2[i];
+	}
 
+	return;
 }
