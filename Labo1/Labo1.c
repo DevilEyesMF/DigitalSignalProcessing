@@ -36,7 +36,7 @@ int main()
 	Wave wave2 = {
 	.amplitude = 0.5,
 	.frequency = 2000,
-	.phase = 3 / 4 * pi
+	.phase = 3.0 / 4.0 * pi
 	};
 
 	// allocate memory
@@ -45,10 +45,13 @@ int main()
 	double* sum = (double*)calloc(NUMBER_OF_SAMPLES, sizeof(double));
 
 	generate_sinewave(wave1.amplitude, wave1.frequency, SAMPLING_FREQ, wave1.phase, NUMBER_OF_SAMPLES, x1);
+	generate_sinewave(wave2.amplitude, wave2.frequency, SAMPLING_FREQ, wave2.phase, NUMBER_OF_SAMPLES, x2);
+
+	add_waves(x1, x2, NUMBER_OF_SAMPLES, sum);
 
 	for (int i = 0; i < NUMBER_OF_SAMPLES; i++)
 	{
-		printf("point %d: %lf\n", i, x1[i]);
+		printf("point %d:\n\twave 1: %lf\t\twave 2: %lf\t\tsum: %lf\n", i, x1[i], x2[i], sum[i]);
 	}
 
 	return 0;
@@ -59,7 +62,7 @@ void generate_sinewave(double a, double f, double fs, double p, int n, double* x
 {
 	for (int i = 0; i < n; i++)
 	{
-		x[i] = sin(2 * pi * (f / fs) * i + p);
+		x[i] = a * sin(2 * pi * (f / fs) * i + p);
 	}
 
 	return;
