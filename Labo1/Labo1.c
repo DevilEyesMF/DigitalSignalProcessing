@@ -1,4 +1,6 @@
 // includes
+#define _USE_MATH_DEFINES
+#include <math.h>
 #include <stdio.h>
 
 // defines
@@ -10,6 +12,10 @@ void add_waves(double*, double*, int, double*);
 
 int main()
 {
+	// variables
+	double a1 = 1;
+	double f1 = 1000;
+
 	// allocate memory
 	double* x1 = (double*)calloc(NUMBER_OF_SAMPLES, sizeof(double));
 	double* x2 = (double*)calloc(NUMBER_OF_SAMPLES, sizeof(double));
@@ -20,7 +26,7 @@ int main()
 	return 0;
 }
 
-void generate_sinewave(double A, double f, double fs, double phi, int N, double* x)
+void generate_sinewave(double a, double f, double fs, double phi, int n, double* x)
 {
 
 }
