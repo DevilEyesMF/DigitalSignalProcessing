@@ -11,8 +11,8 @@
 // prototype functions
 void convolution(double*, int, double*, int, double**);
 
-double seq1[] = { 1, 2, 3};
-double seq2[] = { 1, 2};
+double seq1[] = { 1,7,7,0,1,3};
+double seq2[] = { 48,293,27,6887,9888};
 double* seqOut;
 
 // main
